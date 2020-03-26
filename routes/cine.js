@@ -14,7 +14,7 @@ router.get('/', (req,res)=>{
     
 })
 
-router.getOneByName('/name/:name',(req,res) =>{
+router.get('/name/:name',(req,res) =>{
     Cine.findOne({
         where:{
             nombre:req.params.name
@@ -28,7 +28,7 @@ router.getOneByName('/name/:name',(req,res) =>{
 })
 
 
-router.getOneByName('/location/:location',(req,res) =>{
+router.get('/location/:location',(req,res) =>{
     Cine.findOne({
         where:{
             provincia:req.params.location

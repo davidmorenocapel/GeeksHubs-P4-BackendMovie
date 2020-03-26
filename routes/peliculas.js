@@ -13,7 +13,7 @@ router.get('/', (req,res)=>{
     
 })
 
-router.getOne('/:id',(req,res)=>{
+router.get('/:id',(req,res)=>{
     pelicula.findOne({
         where:{
             id:req.params.id
@@ -26,7 +26,7 @@ router.getOne('/:id',(req,res)=>{
     })
 })
 
-router.getOneByName('/name/:name',(req,res) =>{
+router.get('/name/:name',(req,res) =>{
     pelicula.findOne({
         where:{
             nombre:req.params.name

@@ -10,7 +10,7 @@ router.get('/',(req,res)=>{
         res.status(500).send({message:'Ha habido un problema al cargar los Actores'})
     })
 })
-router.getOne('/:id',(req,res)=>{
+router.get('/:id',(req,res)=>{
     Actor.findOne({
         where:{id:rec.params.id}      
     })
@@ -20,7 +20,7 @@ router.getOne('/:id',(req,res)=>{
         res.status(500).send({message:'Ha habido un problema al cargar los Actores'})
     })
 })
-router.getOneByName('/name/:name',(req,res) =>{
+router.get('/name/:name',(req,res) =>{
     Actor.findOne({
         where:{
             actor:req.params.name

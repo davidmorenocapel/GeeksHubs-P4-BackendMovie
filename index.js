@@ -6,7 +6,7 @@ const cinesRouter = require('./routes/cine.js');
 const peliculasRouter = require('./routes/peliculas.js');
 
 app.use(express.json());
-app.use();
+//app.use();
 
 app.use('/actores', actoresRouter);
 app.use('/cine', cinesRouter);
