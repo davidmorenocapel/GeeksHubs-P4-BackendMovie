@@ -1,8 +1,9 @@
-const router =require('express').Router();
-const { pelicula } =require('../models/index.js')
+const router = require('express').Router();
+const{ Cine } = require('../models/index.js');
+
 
 router.get('/', (req,res)=>{
-    pelicula.findAll({
+    Cine.findAll({
        
     })
     .then(categories => res.send(categories))
@@ -13,21 +14,8 @@ router.get('/', (req,res)=>{
     
 })
 
-router.getOne('/:id',(req,res)=>{
-    pelicula.findOne({
-        where:{
-            id:req.params.id
-        }
-    })
-    .then(product => res.send(product))
-    .catch(err=>{
-        console.log(err)
-        res.status(500).send({message:'Ha habido un problema al buscar el producto'})
-    })
-})
-
 router.getOneByName('/name/:name',(req,res) =>{
-    pelicula.findOne({
+    Cine.findOne({
         where:{
             nombre:req.params.name
         }
@@ -40,5 +28,16 @@ router.getOneByName('/name/:name',(req,res) =>{
 })
 
 
+router.getOneByName('/location/:location',(req,res) =>{
+    Cine.findOne({
+        where:{
+            provincia:req.params.location
+        }
+    })
+    .then(product => res.send(product))
+    .catch(err=>{
+        console.log(err)
+        res.status(500).send({message:'Ha habido un problema al buscar el producto'})
+    })
+})
 
-module.exports=router;
